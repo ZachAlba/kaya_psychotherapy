@@ -1,0 +1,51 @@
+/* pallete info
+--champagne-pink: #EFDFD4ff;
+--desert-sand: #D8BEADff;
+--black: #000000ff;
+--silver: #BBBBBBff;
+--white: #FFFFFFff;
+*/
+
+.center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+}
+
+body{
+        background-color: #EFDFD4ff;
+}
+main{
+    
+    padding: 25px;
+    margin: 20px;
+}
+    
+ .logo {
+    max-width: 700px;
+    min-width: 400px;
+    border: 2px solid #000000ff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #000000ff;
+    margin-top: 40px;
+}
+        
+ 
+
+ /* shadows? something less blocky*/
+
+.headings {
+        background-color: #D8BEADff;
+        font-family: "Helvetica", sans-serif;
+        padding: 20px;
+        
+}
+
+.content{
+        background-color: #D8BEADff;
+        padding: 20px;
+        font-family: "Helvetica", sans-serif;
+}
+    
