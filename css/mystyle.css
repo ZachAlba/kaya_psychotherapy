@@ -6,6 +6,7 @@
 --white: #FFFFFFff;
 */
 
+
 .center {
         display: block;
         margin-left: auto;
@@ -23,29 +24,38 @@ main{
     margin: 20px;
 }
     
- .logo {
+ #logo {
     max-width: 700px;
     min-width: 400px;
+
+}
+
+img{
+    max-width:500px;
+    min-width:300px;
+}
+        
+.borders {
     border: 2px solid #000000ff;
     border-radius: 10px;
     box-shadow: 5px 5px 5px #000000ff;
     margin-top: 40px;
-}
-        
- 
+} 
 
- /* shadows? something less blocky*/
+
 
 .headings {
         background-color: #D8BEADff;
-        font-family: "Helvetica", sans-serif;
+        font-family: "Georgia", sans-serif;
         padding: 20px;
-        
 }
 
 .content{
         background-color: #D8BEADff;
         padding: 20px;
         font-family: "Helvetica", sans-serif;
+        border: 2px solid #000000ff;
 }
     
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); }

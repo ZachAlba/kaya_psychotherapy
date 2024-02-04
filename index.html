@@ -13,7 +13,8 @@
 <body>
     <header>
         <!-- Nav Bar -->
-        <!-- size? figure out hover-->
+        <!-- size? figure out hover grow, broken when navbar toggles - yeets itself to the left??
+            Also fix navbar toggle button, shouldnt be highlighted when off check bootstrap docs-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-3">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Kaya Psychotherapy </a>
@@ -23,49 +24,66 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link grow" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link grow" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link grow" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Services/Scheduling</a>
+                            <a class="nav-link grow" href="#">Services & Scheduling</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
+                            <a class="nav-link grow" href="#">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resources</a>
+                            <a class="nav-link grow" href="#">Resources</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
         
-        <!-- site search-->
+        <!-- insert site search-->
     </header>
 
-    <!-- Content-->
+    <!-- Main Content-->
     <main>
 
     <!-- Logo -->
     <div class="container-fluid">
-    <img src="./images/logo.png" alt="Kaya Psychotherapy Logo" class="center logo">
+    <img src="./images/logo.png" alt="Kaya Psychotherapy Logo" id="logo" class="center borders">
     </div>
+
     <br>
-        <h1 class="center headings">Welcome to the Kaya Psychotherapy website!</h1>
+
+    <h1 class="center headings">Welcome to the Kaya Psychotherapy website!</h1>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-5 content">
+                <div class="col-md-6 content">
                     This website is created to provide information about Kaya Psychotherapy. It is broken into sections, which are currently under construction. 
                     This index page is a placeholder for the Home section. Content here will be updated. There will also be an About section, a Contact section, a Services/Scheduling section, a FAQ section, and a Resources section.
                 </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5 content">
-                    <img src="./images/rocks_resize.jpg" alt="Stacked rocks" width="400" class="center">
+                
+                <div class="col-md-6">
+                    <img src="./images/rocks_resize.jpg" alt="Stacked rocks" class="center borders">
+                </div>
+            </div>
+            <br>
+            <div class = "row">
+                <div class="col-md-6 content">
+                    <ul> Site Map Information
+                        <li>Home: Content pending</li>
+                        <li>About: Blurb about Raiza Felicitas and Kaya Psychotherapy, PsychologyToday profile </li>
+                        <li>Contact: Form for contacting the business</li>
+                        <li>Services & Scheduling: Links to schedule services</li>
+                        <li>FAQ: FAQ page for answering questions</li>
+                        <li>Resources: External resources for mental health, insurance, etc</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
                 </div>
             </div>
         </div>
