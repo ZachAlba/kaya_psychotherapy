@@ -7,14 +7,6 @@
 */
 
 
-.center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        text-align: center;
-}
-
 body{
         background-color: #EFDFD4ff;
 }
@@ -23,17 +15,17 @@ main{
     padding: 25px;
     margin: 20px;
 }
-    
- #logo {
-    max-width: 700px;
-    min-width: 400px;
-
-}
 
 img{
     max-width:500px;
     min-width:300px;
 }
+
+#logo {
+        max-width: 700px;
+        min-width: 400px;
+    
+    }
         
 .borders {
     border: 2px solid #000000ff;
@@ -43,13 +35,20 @@ img{
 } 
 
 
+.center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+}
 
 .headings {
         background-color: #D8BEADff;
         font-family: "Georgia", sans-serif;
         padding: 20px;
         border: 3px solid #000000ff;
-        border-radius: 20px;
+        border-radius: 20px; 
 }
 
 .content{
@@ -58,6 +57,65 @@ img{
         font-family: "Helvetica", sans-serif;
         border: 2px solid #000000ff;
 }
-    
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.2); }
+
+/*slideshow CSS*/
+.slideshow-container {
+        max-width: 1200px; /* Set maximum width for the slideshow container */
+        margin: auto; /* Center the slideshow horizontally */
+}
+
+.mySlides {
+        display: none; /* Hide slideshow images by default */
+}
+
+.fade {
+        animation-name: fade;
+        animation-duration: 1.5s; /* Duration of the fading animation */
+        max-width: 100%; /* Ensure the image fits within its container */
+}
+@keyframes fade {
+        from {opacity: .4}  /* Initial opacity for the fading animation */
+        to {opacity: 1} /* Final opacity for the fading animation */
+      }
+
+      
+/*other animations*/      
+
+
+
+/* when screen small */
+@media screen and (max-width: 992px) {
+        .footer {
+          position: static;
+        }
+        /* overload bootstrap classes here*/
+        .active {
+                text-decoration:underline;
+        }
+
+        /*animations*/
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover {text-decoration:underline;}
+
+}
+
+/* when screen big */
+@media screen and (min-width: 992px){
+        
+        /*animations*/      
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover { 
+                text-decoration: underline;
+                transform: scale(1.2); 
+        }
+
+        /* overload bootstrap classes here*/
+        .active {
+                background-color: #FFFFFFff;
+                color: #000000ff;
+                border: 1px solid #000000ff;
+                border-radius: 40px;
+                text-decoration: underline;
+        }
+        
+}
