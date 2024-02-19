@@ -22,8 +22,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link grow"  href="index.html">Home</a>
-                    <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                    <a class="nav-link grow" href="contact.html">Contact</a>
+                    <a class="nav-link grow"  href="about.html">About</a>
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
                     <a class="nav-link grow" href="#">Services & Scheduling</a>
                     <a class="nav-link grow" href="#">FAQ</a>
                     <a class="nav-link grow" href="#">Resources</a>
@@ -40,57 +40,35 @@
     <main>
 
     <!-- Logo -->
-    <div class="container">
-        <img src="./images/logo.png" alt="Kaya Psychotherapy Logo" id="logo" class="center borders">
+    <div class="container-fluid">
+    <img src="./images/logo.png" alt="Kaya Psychotherapy Logo" id="logo" class="center borders">
     </div>
 
     <br>
-    <div class="container-fluid">
-    <h1 class="center headings">About Raiza</h1>
-        <div class="container mt-5 mb-5">
 
-            <div class="row">
-                <div class="content col-md-6">
+    <h1 class="center headings">Contact Kaya Psychotherapy</h1>
+    <div id="contact-form">
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <p>As a proud immigrant from the Philippines, I named my practice Kaya, which means "can" in Filipino. My goal as a Mental Health Counselor is 
-                to create a comfortable and safe environment for you to process your thoughts and feelings. 
-                I strive to empower every client, no matter what challenges they are faced with. </p>
-                <br>
-                <p>I specialize in adult clients struggling with relationship issues, anxiety, life transitions and self-confidence. As a therapist, I recognize that life doesn't always come easy. 
-                Relationships can be tricky and inevitable life changes can make us feel vulnerable and anxious. My style in sessions is to ask the right questions that lead to self exploration 
-                so that you can take better lead of your life. With compassion, I will help you shift unhelpful thinking patterns to ones that better serve you. 
-                In working with me, you can expect empathetic support along with appropriate challenges that will help move you forward in your journey.</p>
-                <br>
-                <p>I'm so glad you are considering this opportunity to heal and grow. I look forward to working with you!</p>   
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-                </div>
-                <div class="col-md-6">
-                    <img src="images/profile.png" class="borders center" alt="Profile picture of Raiza Felicitas">
-                    <br><br>
-                    <p class="center"><em>Raiza Felicitas, LICSW <br>
-                    Owner, psychotherapist</em></p>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-3 center">
-                
-                    <div class="">
-                        <img src="images/slideshow/balance.jpg" alt="Balanced rocks" class="slideshow">
-                    </div>
-                    <div class="">
-                        <img src="images/slideshow/growing.jpg" alt="Plant growing on someone's hand" class="slideshow">
-                    </div>
-                    <div class="">
-                        <img src="images/slideshow/relaxing_water.jpg" alt="Hand resting in water" class="slideshow">
-                    </div>
-                </div>
-            </div>
-        </div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="button" value="Submit" id="submitBtn">
+        </form>
     </div>
+
+    <div id="output"></div>
+
+    <script src="./js/form.js"></script>
+        
     </main>
             
-
+    
     <!-- Footer -->
     <!-- php .inc files moving forward?-->
     <br><br><br>
@@ -115,8 +93,6 @@
 
     <!-- Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- Slideshow JS-->
-    <script src="js/slideshow.js"></script>
+    
 </body>
 </html>
-
