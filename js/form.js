@@ -11,15 +11,14 @@ function submitForm() {
         
         // Set blank fields background to red
         if (name.trim() === '') {
-            document.getElementById('name').style.backgroundColor = 'red';
+            document.getElementById('name').style.border = '1px solid red';
         }
         if (email.trim() === '') {
-            document.getElementById('email').style.backgroundColor = 'red';
+            document.getElementById('email').style.border = '1px solid red';
         }
         if (message.trim() === '') {
-            document.getElementById('message').style.backgroundColor = 'red';
+            document.getElementById('message').style.border = '1px solid red';
         }
-        
         return;
     }
 
@@ -42,10 +41,14 @@ function submitForm() {
     outputDiv.appendChild(newElement);
 }
 
-// Reset input fields to white when clicked
-var inputFields = document.querySelectorAll('input');
+// Reset input fields and textarea to white when clicked or typed
+var inputFields = document.querySelectorAll('input, textarea');
 inputFields.forEach(function(input) {
     input.addEventListener('click', function() {
-        this.style.backgroundColor = 'white';
+        this.style.border = 'none';
+    });
+
+    input.addEventListener('input', function() {
+        this.style.border = 'none';
     });
 });
