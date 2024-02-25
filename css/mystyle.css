@@ -7,8 +7,9 @@
 */
 
 
-body{
-        background-color: #EFDFD4ff;
+
+body {
+        background-image: linear-gradient(125deg, #EFDFD4ff, rgb(218, 161, 124));
 }
 main{
     
