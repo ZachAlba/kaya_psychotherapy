@@ -1,9 +1,9 @@
-document.getElementById('submitBtn').addEventListener('click', submitForm);
+$('#submitBtn').on('click', submitForm);
 
 function submitForm() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
 
     // Validate form
     if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
@@ -11,13 +11,13 @@ function submitForm() {
         
         // Set blank fields background to red
         if (name.trim() === '') {
-            document.getElementById('name').style.border = '1px solid red';
+            $('#name').css('border', '1px solid red');
         }
         if (email.trim() === '') {
-            document.getElementById('email').style.border = '1px solid red';
+            $('#email').css('border', '1px solid red');
         }
         if (message.trim() === '') {
-            document.getElementById('message').style.border = '1px solid red';
+            $('#message').css('border', '1px solid red');
         }
         return;
     }
@@ -31,24 +31,15 @@ function submitForm() {
     // Not sure how to implement this yet
 
     // Clear form after submission
-    document.getElementById('myForm').reset();
+    $('#myForm')[0].reset();
 
-
-    var outputDiv = document.getElementById('output');
-    var newElement = document.createElement('p');
-    var newText = document.createTextNode('Thank you for reaching out, ' + name + '! I will get back to you as soon as possible.');
-    newElement.appendChild(newText);
-    outputDiv.appendChild(newElement);
+    var outputDiv = $('#output');
+    var newElement = $('<p>').text('Thank you for reaching out, ' + name + '! I will get back to you as soon as possible.');
+    outputDiv.append(newElement);
 }
 
 // Reset input fields and textarea to white when clicked or typed
-var inputFields = document.querySelectorAll('input, textarea');
-inputFields.forEach(function(input) {
-    input.addEventListener('click', function() {
-        this.style.border = 'none';
-    });
-
-    input.addEventListener('input', function() {
-        this.style.border = 'none';
-    });
+var inputFields = $('input, textarea');
+inputFields.on('click input', function() {
+    $(this).css('border', 'none');
 });
