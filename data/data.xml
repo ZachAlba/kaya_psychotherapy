@@ -1,11 +1,11 @@
 <root>
 <div class="accordion-item">
     <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
             How long does therapy take?
         </button>
     </h2>
-    <div id="collapse3" class="accordion-collapse collapse">
+    <div id="collapse5" class="accordion-collapse collapse">
         <div class="accordion-body">
             <p>The duration of therapy varies depending on individual needs and goals. Some people find relief in a few sessions, while others benefit from longer-term therapy. It's a collaborative process, and the duration is determined together with the therapist.</p>
         </div>
@@ -14,11 +14,11 @@
 
 <div class="accordion-item">
     <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
             How often are therapy sessions?
         </button>
     </h2>
-    <div id="collapse4" class="accordion-collapse collapse">
+    <div id="collapse6" class="accordion-collapse collapse">
         <div class="accordion-body">
             <p>Sessions are typically scheduled weekly, but the frequency may vary based on individual needs and progress. Your therapist will work with you to determine the most suitable schedule.</p>
         </div>
