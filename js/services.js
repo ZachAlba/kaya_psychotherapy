@@ -2,22 +2,9 @@
         var cards = $(".card");
 
         cards.hover(function() {
-            $(this).animate({
-                width: "120%",
-                height: "120%"
-            }, 200, function() {
-                $(this).find(".card-text").fadeIn();
-            });
+            $(this).find(".card-text").fadeIn('slow');
         }, function() {
-            $(this).animate({
-                width: "100%",
-                height: "100%"
-            }, 200, function() {
-                $(this).find(".card-text").fadeOut();
-            });
+            $(this).find(".card-text").fadeOut('slow');
         });
     });
 
-
-
-    //fix this wonky shit
