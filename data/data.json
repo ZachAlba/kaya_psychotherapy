@@ -1,0 +1,68 @@
+[
+    {
+        "accordion-item": {
+            "accordion-header": {
+                "button": {
+                    "class": "accordion-button collapsed",
+                    "type": "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#collapse5",
+                    "text": "Is therapy confidential?"
+                }
+            },
+            "accordion-collapse": {
+                "id": "collapse5",
+                "class": "accordion-collapse collapse",
+                "accordion-body": {
+                    "p": {
+                        "text": "Yes, therapy is confidential. Your privacy is a top priority, and therapists adhere to ethical and legal standards to protect your personal information."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "accordion-item": {
+            "accordion-header": {
+                "button": {
+                    "class": "accordion-button collapsed",
+                    "type": "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#collapse6",
+                    "text": "What can I expect during the first therapy session?"
+                }
+            },
+            "accordion-collapse": {
+                "id": "collapse6",
+                "class": "accordion-collapse collapse",
+                "accordion-body": {
+                    "p": {
+                        "text": "The first session, often called an intake session, involves discussing your reasons for seeking therapy, personal history, and goals. It's an opportunity to establish rapport and determine the best approach for your needs."
+                    }
+                }
+            }
+        }
+    },
+    {
+        "accordion-item": {
+            "accordion-header": {
+                "button": {
+                    "class": "accordion-button collapsed",
+                    "type": "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#collapse7",
+                    "text": "How much does therapy cost?"
+                }
+            },
+            "accordion-collapse": {
+                "id": "collapse7",
+                "class": "accordion-collapse collapse",
+                "accordion-body": {
+                    "p": {
+                        "text": "Therapy fees vary, and it's essential to discuss this with your therapist. Some therapists offer sliding scale fees or accept insurance. Open communication about fees and payment options is encouraged."
+                    }
+                }
+            }
+        }
+    }
+]

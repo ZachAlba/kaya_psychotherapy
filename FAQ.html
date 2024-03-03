@@ -24,7 +24,7 @@
                     <a class="nav-link grow"  href="index.html">Home</a>
                     <a class="nav-link grow"  href="about.html">About</a>
                     <a class="nav-link grow" href="contact.html">Contact</a>
-                    <a class="nav-link grow" href="services.html">Services & Scheduling</a>
+                    <a class="nav-link grow" href="services.html">Services</a>
                     <a class="nav-link active"  aria-current="page" href="FAQ.html">FAQ</a>
                     <a class="nav-link grow" href="resources.html">Resources</a>
                 </div>
@@ -45,7 +45,42 @@
     </div>
 
     <br>
- 
+    <h1 class="center headings">Frequently Asked Questions</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accordion" id="faq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                            What is psychotherapy?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p>Psychotherapy is a general term for treating mental health problems by talking with a psychiatrist, psychologist or other mental health provider. During psychotherapy, you learn about your condition and your moods, feelings, thoughts and behaviors. Psychotherapy helps you learn how to take control of your life and respond to challenging situations with healthy coping skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                            What is the difference between a psychiatrist and a psychologist?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <p>Psychiatrists are medical doctors who can prescribe medications. They treat mental health conditions as well as physical conditions. Psychologists focus on providing psychotherapy (talk therapy) to help patients. They also perform psychological testing and assessment, but cannot prescribe medications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>            
+        </div>
+        <br>
+        <button id="makeRequest" class="btn btn-secondary">Load More</button>
+    </div>
     </main>
             
 
@@ -78,6 +113,8 @@
     <script>
         window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')
     </script>
+    <!-- Local JS-->
+    <script src="js/FAQ.js"></script>
 </body>
 </html>
 
