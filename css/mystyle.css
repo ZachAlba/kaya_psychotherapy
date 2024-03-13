@@ -116,12 +116,8 @@ img{
         border: 2px solid #000000ff;
         border-radius: 50%;
         animation: slideshow-animation 5s;
-        transform: scale(1);
 }
 
-.slideshow:hover {
-        transform: scale(1.2);
-}
 
 @keyframes slideshow-animation {
         0% {
