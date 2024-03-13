@@ -110,27 +110,7 @@ img{
         display: none;
 }
 
-.slideshow {
-        max-width: 100%;
-        margin: auto;
-        border: 2px solid #000000ff;
-        border-radius: 50%;
-        animation: slideshow-animation 5s;
-}
 
-
-@keyframes slideshow-animation {
-        0% {
-                opacity: 0.1;
-        }
-        50% {
-                opacity: 1;
-        }
-        100% {
-                opacity: 0;
-        }
-
-}
 
 
 
