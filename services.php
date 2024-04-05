@@ -1,3 +1,7 @@
+<?php include 'includes/service_class.php';
+    $service1 = new Service("Free Initial Consultation", "15 mins.", 0.00, 15, 1);
+    $service2 = new Service("Online Psychotherapy", "45 mins.", 100.00, 45, 5);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +57,9 @@
                         <div class="card" id="card1">
                             <img src="images/slideshow/balance.jpg" class="card-img-top" alt="stacked rocks, balance">
                             <div class="card-body">
-                                <h5 class="card-title">Free Initial Consultation</h5>
-                                <p class="card-text">15 mins.</p>
+                                <h5 class="card-title"><?= $service1->service_name ?></h5>
+                                <p class="card-text"><?= $service1->service_description ?><br>Sessions Available: <?= $service1->services_available?></p>
+                                <button id="bookFreeServiceBtn">Book Now</button>
                             </div>
                         </div>
                     </a>
@@ -63,8 +68,9 @@
                         <div class="card" id="card2">
                             <img src="images/slideshow/growing.jpg" class="card-img-top" alt="green sprout on a person's hand, growing">
                             <div class="card-body">
-                                <h5 class="card-title">Online Psychotherapy</h5>
-                                <p class="card-text">45 mins.</p>
+                                <h5 class="card-title"><?= $service2->service_name ?></h5>
+                                <p class="card-text"><?= $service2->service_description ?><br>Sessions Available: <?= $service2->services_available?></p>
+                                <button id="bookServiceBtn">Book Now</button>
                             </div>
                         </div>
                     </a>
@@ -105,10 +111,26 @@
         <script>
             window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')
         </script>
-            <!-- Custom jQuery -->
-            <script src="js/services.js"></script>
-            <script src="js/jq_ajax.js"></script>
-            
-</body>
+        <!-- Custom jQuery -->
+        <script src="js/services.js"></script>
+        <script src="js/jq_ajax.js"></script>
+        <!-- JS for PHP class method on button click -->
+        <script>
+            document.getElementById("bookServiceBtn").addEventListener("click", function() {
+                <?php
+                    $result = $service2->bookService();
+                ?>
+
+                alert("<?php echo $result; ?>");
+            });
+            document.getElementById("bookFreeServiceBtn").addEventListener("click", function() {
+                <?php
+                    $result = $service1->bookService();
+                ?>
+
+                alert("<?php echo $result; ?>");
+            });
+        </script>    
+    </body>
 </html>
 

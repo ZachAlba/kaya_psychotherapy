@@ -4,7 +4,7 @@
         public string $service_name;
         public string $service_description;
         protected float $service_price;
-        public int $service_duration;
+        public string $service_duration;
         protected int $services_available;
         
         // Constructor
@@ -28,17 +28,18 @@
         public function setServicePrice($service_price) {
             $this->service_price = $service_price;
         }
-        public function changeServiceAvailability($services_available) {
-            $this->services_available = $services_available;
+        public function changeServiceAvailability() {
+            $this->services_available = $this->$services_available-1;
         }
 
+        // Placeholder function that only updates visuals until I can implement a database or send mail
         public function bookService() {
             if ($this->getServiceAvailability()>0){
-                $this->changeServiceAvailability($this->getServiceAvailability()-1);
-                echo "Service booked successfully";
+                $this->changeServiceAvailability();
+                return "Service booked successfully";
             }
             else {
-                echo "Service is not available";
+                return "Service is not available";
             }
         }
     }
