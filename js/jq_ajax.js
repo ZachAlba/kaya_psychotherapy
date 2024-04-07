@@ -42,7 +42,7 @@ $('#free').on('click', function (event) {
 $('#bookServiceBtn').on('click', function() {
     // Send an AJAX request to book the service
     $.ajax({
-        url: 'book_service.php', // URL of the PHP script that handles the booking
+        url: 'php/book_service.php', // URL of the PHP script that handles the booking
         method: 'POST', // Use POST method to send data
         data: { service: 'service2' }, // Send data indicating the selected service
         success: function(result) {
@@ -60,7 +60,7 @@ $('#bookServiceBtn').on('click', function() {
 $('#bookFreeServiceBtn').on('click', function() {
     // Send an AJAX request to book the free service
     $.ajax({
-        url: 'book_service.php', // URL of the PHP script that handles the booking
+        url: 'php/book_service.php', // URL of the PHP script that handles the booking
         method: 'POST', // Use POST method to send data
         data: { service: 'service1' }, // Send data indicating the selected service
         success: function(result) {
