@@ -16,6 +16,7 @@
         }
 
         // Send the result back to the client-side JavaScript
-        echo $result;
+        header('Content-Type: application/json');
+        echo json_encode($result);
     }
 ?>
