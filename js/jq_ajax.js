@@ -4,6 +4,9 @@
 /////~~  AJAX and PHP Requests   ~~////
 ///////////////////////////////////////
 
+
+//why is this not updating
+
 $('#loadData').on('click', function (event) {
     event.preventDefault();
 
