@@ -28,7 +28,7 @@
                     <a class="nav-link grow" href="index.html">Home</a>
                     <a class="nav-link grow" href="about.html">About</a>
                     <a class="nav-link grow" href="contact.html">Contact</a>
-                    <a class="nav-link active" aria-current="page" href="services.html">Services</a>
+                    <a class="nav-link active" aria-current="page" href="services.php">Services</a>
                     <a class="nav-link grow" href="FAQ.html">FAQ</a>
                     <a class="nav-link grow" href="resources.html">Resources</a>
                 </div>
