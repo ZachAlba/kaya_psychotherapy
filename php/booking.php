@@ -14,8 +14,7 @@
             $result = $service2->bookService();
         }
 
-        // Send the result back to the client-side JavaScript
-        header('Content-Type: application/json');
+        // Return the result of the booking attempt
         echo json_encode($result);
     }
 ?>
