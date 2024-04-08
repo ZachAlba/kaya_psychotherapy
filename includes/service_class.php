@@ -29,7 +29,7 @@
             $this->service_price = $service_price;
         }
         public function changeServiceAvailability() {
-            $this->services_available = $this->$services_available-1;
+            $this->services_available = $this->services_available-1;
         }
 
         // Placeholder function that only updates visuals until I can implement a database or send mail
