@@ -45,9 +45,11 @@ $('#bookServiceBtn').on('click', function() {
         url: 'php/booking.php', // URL of the PHP script that handles the booking
         method: 'POST', // Use POST method to send data
         data: { service: 'service2' }, // Send data indicating the selected service
-        success: function(result) {
-            // Display the result returned by the PHP script
-            alert(result);
+        success: function(response) {
+            // Parse the JSON response
+            var result = JSON.parse(response);
+            // Display the message returned by the PHP script
+            alert(result.message);
         },
         error: function(xhr, status, error) {
             // Handle errors
@@ -63,9 +65,11 @@ $('#bookFreeServiceBtn').on('click', function() {
         url: 'php/booking.php', // URL of the PHP script that handles the booking
         method: 'POST', // Use POST method to send data
         data: { service: 'service1' }, // Send data indicating the selected service
-        success: function(result) {
-            // Display the result returned by the PHP script
-            alert(result);
+        success: function(response) {
+            // Parse the JSON response
+            var result = JSON.parse(response);
+            // Display the message returned by the PHP script
+            alert(result.message);
         },
         error: function(xhr, status, error) {
             // Handle errors

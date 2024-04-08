@@ -14,7 +14,10 @@
             $result = $service2->bookService();
         }
 
-        // Return the result of the booking attempt
-        echo $result;
+        $response = array('message' => $result);
+
+        // Return the response as JSON
+        echo json_encode($response);
+        exit;
     }
 ?>
