@@ -43,4 +43,6 @@
             }
         }
     }
+    $service1 = new Service("Free Initial Consultation", "15 mins.", 0.00, 15, 1);
+    $service2 = new Service("Online Psychotherapy", "45 mins.", 100.00, 45, 5);
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-    include '../services.php';
+    include '../includes/service_class.php';
 
     // Check if the AJAX request contains the 'service' parameter
     if(isset($_POST['service'])) {
