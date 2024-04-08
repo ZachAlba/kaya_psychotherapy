@@ -14,7 +14,8 @@
             $result = $service2->bookService();
         }
 
-        echo json_encode(['message' => $result]);
-        exit; 
+        // Send the result back to the client-side JavaScript
+        header('Content-Type: application/json');
+        echo json_encode($result);
     }
 ?>
