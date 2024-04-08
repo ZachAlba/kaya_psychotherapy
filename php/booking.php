@@ -14,5 +14,7 @@
             $result = $service2->bookService();
         }
 
+        echo json_encode(['message' => $result]);
+        exit; 
     }
 ?>

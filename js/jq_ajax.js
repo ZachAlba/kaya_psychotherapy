@@ -42,12 +42,13 @@ $('#free').on('click', function (event) {
 $('#bookServiceBtn').on('click', function() {
     // Send an AJAX request to book the service
     $.ajax({
-        url: 'php/booking.php', // URL of the PHP script that handles the booking
-        method: 'POST', // Use POST method to send data
-        data: { service: 'service2' }, // Send data indicating the selected service
-        success: function(result) {
-            // Display the result returned by the PHP script
-            alert(result);
+        url: 'php/booking.php',
+        method: 'POST',
+        data: { service: 'service2' },
+        dataType: 'json', // Expect JSON response
+        success: function(response) {
+            // Display the message returned by the PHP script
+            alert(response.message);
         },
         error: function(xhr, status, error) {
             // Handle errors
@@ -60,12 +61,13 @@ $('#bookServiceBtn').on('click', function() {
 $('#bookFreeServiceBtn').on('click', function() {
     // Send an AJAX request to book the free service
     $.ajax({
-        url: 'php/booking.php', // URL of the PHP script that handles the booking
-        method: 'POST', // Use POST method to send data
-        data: { service: 'service1' }, // Send data indicating the selected service
-        success: function(result) {
-            // Display the result returned by the PHP script
-            alert(result);
+        url: 'php/booking.php',
+        method: 'POST',
+        data: { service: 'service1' },
+        dataType: 'json', // Expect JSON response
+        success: function(response) {
+            // Display the message returned by the PHP script
+            alert(response.message);
         },
         error: function(xhr, status, error) {
             // Handle errors
