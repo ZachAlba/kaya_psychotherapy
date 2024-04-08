@@ -15,6 +15,6 @@
         }
 
         // Return the result of the booking attempt
-        echo json_encode($result);
+        echo $result;
     }
 ?>
