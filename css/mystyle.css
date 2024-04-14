@@ -10,13 +10,20 @@
 
 body {
         background-image: linear-gradient(125deg, #EFDFD4ff, rgb(218, 161, 124));
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
 }
 main{
     
     padding: 25px;
     margin: 20px;
+    flex: 1;
 }
-
+footer{
+        bottom: 0;
+        flex-shrink: 0;
+    }
 img{
     max-width:500px;
     min-width:300px;
