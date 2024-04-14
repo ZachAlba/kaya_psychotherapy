@@ -1,3 +1,17 @@
+<?php
+// Include the validation code
+require_once 'includes/validate.php';
+
+// Define a variable to hold the feedback message
+$feedbackMessage = "";
+
+// Check if form is submitted and if it's valid
+if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($nameErr) && empty($emailErr) && empty($ageErr) && empty($insuranceErr) && empty($messageErr)) {
+    // Set the feedback message
+    $feedbackMessage = '<p>Thank you for your message. We will get back to you soon.</p>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,25 +66,11 @@
     <br>
 
     <h1 class="center headings">Contact Kaya Psychotherapy</h1>
-    <div id="contact-form" class="container">
-        <form id="myForm">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-            </div>
-            <button type="submit" id="submitBtn" class="btn">Submit</button>
-        </form>
+    <?php include 'includes/contact_form.php'; ?>
+    <br>
+    <div id="feedback">
+    <?php echo $feedbackMessage; ?>
     </div>
-
-    <div id="output"></div>
     <br>
     <div class="container">
         <h2 class="center headings">Location</h2>
