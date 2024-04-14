@@ -1,3 +1,74 @@
+<?php
+// Include the validation code
+require_once 'includes/validate.php';
+
+// Initialize form data and error messages
+$formData = array(
+    'name' => '',
+    'email' => '',
+    'age' => '',
+    'insurance' => '',
+    'message' => '',
+    'waiting_list' => false 
+);
+$errorMessages = array(
+    'name' => '',
+    'email' => '',
+    'age' => '',
+    'insurance' => '',
+    'message' => ''
+);
+$feedbackMessage = '';
+
+// Check if form is submitted and validate form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $formData['name'] = $_POST['name'];
+    $formData['email'] = $_POST['email'];
+    $formData['age'] = $_POST['age'];
+    $formData['insurance'] = isset($_POST['insurance']) ? $_POST['insurance'] : '';
+    $formData['message'] = $_POST['message'];
+    $formData['waiting_list'] = isset($_POST['waiting_list']);
+
+    // Validate form data
+    if (!validateText($formData['name'], 3, 100)) {
+        $errorMessages['name'] = "Name is required and must be between 3 and 100 characters long.";
+    }
+    if (!filter_var($formData['email'], FILTER_VALIDATE_EMAIL)) {
+        $errorMessages['email'] = "Valid email is required.";
+    }
+    if (!validateNumber($formData['age'], 16, 65)) {
+        $errorMessages['age'] = "Age must be between 16 and 65.";
+    }
+    if (!validateInsurance($formData['insurance'])) {
+        $errorMessages['insurance'] = "Please select a valid insurance option.";
+    }
+    if (empty($formData['message'])) {
+        $errorMessages['message'] = "Message is required.";
+    }
+
+    // Check errors
+    $hasErrors = false;
+    foreach ($errorMessages as $error) {
+        if (!empty($error)) {
+            $hasErrors = true;
+            break;
+        }
+    }
+
+    // Feedback
+    if ($hasErrors) {
+        $feedbackMessage = '<p class="text-danger">There was an error processing your form. Please check your inputs and try again.</p>';
+    } else {
+        // Send email or add to database?
+        $feedbackMessage = '<p class="text-success">Thank you for your message, ' . htmlspecialchars($formData['name']) . '. We will get back to you soon.</p>';
+    }
+
+    // Set cookie for the user's name
+    setcookie('username', $formData['name'], time() + (86400 * 30), "/"); // 86400 = 1 day
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +79,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/mystyle.css">
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <header>
@@ -31,7 +97,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                     <a class="nav-link grow" href="services.php">Services</a>
                     <a class="nav-link grow" href="FAQ.html">FAQ</a>
-                    <a class="nav-link grow" href="resources.html">Resources</a>
+                    <a class="disabled nav-link grow" href="resources.html"'>Resources</a>
                 </div>
                 </div>
             </div>
@@ -52,25 +118,14 @@
     <br>
 
     <h1 class="center headings">Contact Kaya Psychotherapy</h1>
-    <div id="contact-form" class="container">
-        <form id="myForm">
-            <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-            </div>
-            <button type="submit" id="submitBtn" class="btn">Submit</button>
-        </form>
-    </div>
+    <div class="form-container">
 
-    <div id="output"></div>
+        <?php include 'includes/contact_form.php'; ?>
+    </div>
+    <br>
+    <div id="feedback">
+        <?php echo $feedbackMessage; ?>
+    </div>
     <br>
     <div class="container">
         <h2 class="center headings">Location</h2>
