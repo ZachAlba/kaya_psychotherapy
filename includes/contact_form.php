@@ -1,6 +1,6 @@
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
     <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($formData['name']); ?>" required><br>
+    <input type="text" id="name" name="name" value="<?php echo isset($_COOKIE['username']) ? htmlspecialchars($_COOKIE['username']) : htmlspecialchars($formData['name']); ?>" required><br>
     <span class="error"><?php echo $errorMessages['name']; ?></span><br>
     
     <label for="email">Email:</label><br>

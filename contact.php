@@ -2,6 +2,7 @@
 // Include the validation code
 require_once 'includes/validate.php';
 
+// Initialize form data and error messages
 $formData = array(
     'name' => '',
     'email' => '',
@@ -21,12 +22,13 @@ $feedbackMessage = '';
 
 // Check if form is submitted and validate form data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // get form data
+    // Get form data
     $formData['name'] = $_POST['name'];
     $formData['email'] = $_POST['email'];
     $formData['age'] = $_POST['age'];
     $formData['insurance'] = isset($_POST['insurance']) ? $_POST['insurance'] : '';
     $formData['message'] = $_POST['message'];
+    $formData['waiting_list'] = isset($_POST['waiting_list']);
 
     // Validate form data
     if (!validateText($formData['name'], 3, 100)) {
@@ -54,13 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // feedback
+    // Feedback
     if ($hasErrors) {
         $feedbackMessage = '<p class="text-danger">There was an error processing your form. Please check your inputs and try again.</p>';
     } else {
-        // send email or add to database?
-        $feedbackMessage = '<p class="text-success">Thank you for your message. We will get back to you soon.</p>';
+        // Send email or add to database?
+        $feedbackMessage = '<p class="text-success">Thank you for your message, ' . htmlspecialchars($formData['name']) . '. We will get back to you soon.</p>';
     }
+
+    // Set cookie for the user's name
+    setcookie('username', $formData['name'], time() + (86400 * 30), "/"); // 86400 = 1 day
 }
 ?>
 
