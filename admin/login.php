@@ -1,9 +1,15 @@
+<?php
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaya Psychotherapy</title>
+    <title>Admin Login</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -31,55 +37,28 @@
                 </div>
             </div>
         </nav>
-        
-        <!-- insert site search ? -->
-
     </header>
 
-    <!-- Main Content-->
     <main>
-
-    <!-- Logo -->
-    <div class="container-fluid">
-    <img src="./images/logo.png" alt="Kaya Psychotherapy Logo" id="logo" class="center borders">
-    </div>
-
-    <br>
-
-    <h1 class="center headings">Welcome to Kaya Psychotherapy!</h1>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-6 content">
-                    This website is created to provide information about Kaya Psychotherapy, and allow users to access counseling services. It is broken into sections, which are currently under construction. 
-                    This index page is a placeholder for the Home section. Content here will be updated. There will also be an About section, a Contact section, a Services/Scheduling section, a FAQ section, and a Resources section.
-                </div>
-                
-                <div class="col-md-6">
-                    <img src="./images/rocks_resize.jpg" alt="Stacked rocks" class="center borders">
-                </div>
-            </div>
-            <br>
-            <div class = "row">
-                <div class="col-md-6 content">
-                    <p>Site Map Information</p>
-                    <ul> 
-                        <li>Home: Content pending</li>
-                        <li>About: Blurb about Raiza Felicitas and Kaya Psychotherapy, PsychologyToday profile </li>
-                        <li>Contact: Form for contacting the business</li>
-                        <li>Services & Scheduling: Links to schedule services</li>
-                        <li>FAQ: FAQ page for answering questions</li>
-                        <li>Resources: External resources for mental health, insurance, etc</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-6 offset-md-3">
+                    <h1 class="text-center">Admin Login</h1>
+                    <form action="admin.php" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
                 </div>
             </div>
         </div>
     </main>
-            
-    
-    <!-- Footer -->
-    <!-- php .inc files moving forward?-->
     <br><br><br>
     <footer class="footer mt-auto py-1 bg-light">
         <div class="container">
@@ -105,4 +84,3 @@
     
 </body>
 </html>
-

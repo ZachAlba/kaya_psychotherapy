@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                     <a class="nav-link grow" href="services.php">Services</a>
                     <a class="nav-link grow" href="FAQ.html">FAQ</a>
-                    <a class="disabled nav-link grow" href="resources.html"'>Resources</a>
+                    <a class="disabled nav-link grow" href="resources.html">Resources</a>
                 </div>
                 </div>
             </div>
