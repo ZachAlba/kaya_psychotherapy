@@ -1,6 +1,7 @@
 <?php
 // Include the validation code
 require_once 'includes/validate.php';
+include 'includes/database_connection.php';
 
 // Initialize form data and error messages
 $formData = array(
@@ -9,7 +10,7 @@ $formData = array(
     'age' => '',
     'insurance' => '',
     'message' => '',
-    'waiting_list' => false 
+    'waitlist' => false 
 );
 $errorMessages = array(
     'name' => '',
@@ -28,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $formData['age'] = $_POST['age'];
     $formData['insurance'] = isset($_POST['insurance']) ? $_POST['insurance'] : '';
     $formData['message'] = $_POST['message'];
-    $formData['waiting_list'] = isset($_POST['waiting_list']);
+    $formData['waitlist'] = isset($_POST['waitlist']);
 
     // Validate form data
     if (!validateText($formData['name'], 3, 100)) {
@@ -61,6 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $feedbackMessage = '<p class="text-danger">There was an error processing your form. Please check your inputs and try again.</p>';
     } else {
         // Send email or add to database?
+        $sql = "INSERT INTO Client (name, email, age, insurance, message, waitlist) VALUES (:name, :email, :age, :insurance, :message, :waitlist)";
+        pdo($pdo, $sql, [
+            'name' => $formData['name'],
+            'email' => $formData['email'],
+            'age' => $formData['age'],
+            'insurance' => $formData['insurance'],
+            'message' => $formData['message'],
+            'waitlist' => $formData['waitlist']
+        ]);
         $feedbackMessage = '<p class="text-success">Thank you for your message, ' . htmlspecialchars($formData['name']) . '. We will get back to you soon.</p>';
     }
 
