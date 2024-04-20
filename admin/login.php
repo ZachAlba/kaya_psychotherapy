@@ -35,9 +35,11 @@
       // Stop further code running 
       exit;   
     }
+    else {
+        // Set error message
+        $error_message = "Invalid username or password. Please try again.";
+      }
   }
-  $password = 'Simple123';
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
   
 
 ?> 
@@ -89,6 +91,10 @@
                         Password: <input type="password" name="password"><br>
                     <input type="submit" value="Log In">
                     </form>
+                    <!-- Display error message if exists -->
+                    <?php if (!empty($error_message)): ?>
+                      <div class="text-danger"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
