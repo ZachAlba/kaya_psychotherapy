@@ -58,7 +58,7 @@
 	    
 	    // Get username and password from db and check if matches what user typed in login form												  
 	    $sql = "SELECT username, password
-	            FROM user
+	            FROM Admin
 	            WHERE username = :username AND password = :password";
 
 	    // Execute SQL query w/args for username and password

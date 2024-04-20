@@ -1,9 +1,43 @@
 <?php
+  // Include the session script
+  require '../includes/session.php';
+
+  // If already logged in
+  if ($logged_in) { 
+    // Redirect to admin controls page   
+    header('Location: controls.php'); 
+
+    // Stop further code running
+    exit;
+  }    
 
 
-?>
+  // Check if the form was submitted.
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the username the user sent
+    $username = $_POST['username'];
+
+    // Get the password the user sent
+    $password = $_POST['password'];
 
 
+    // Call your authenticate function in the 'session.php' file to authenticate the user based on the provided username and password. 
+    $user = authenticate($pdo, $username, $password);
+
+    // If username and password is valid (i.e., user data returned)
+    if ($user) {
+      // Call the login function in the 'session.php' file to update session data
+      login($username);  
+
+      // Redirect to admin controls page                             
+      header('Location: controls.php');
+
+      // Stop further code running 
+      exit;   
+    }
+  }
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,16 +78,12 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h1 class="text-center">Admin Login</h1>
-                    <form action="admin.php" method="post">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                    <br />
+      
+                    <form method="POST" action="login.php">
+                        Username: <input type="username" name="username"><br>
+                        Password: <input type="password" name="password"><br>
+                    <input type="submit" value="Log In">
                     </form>
                 </div>
             </div>
