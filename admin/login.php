@@ -36,6 +36,9 @@
       exit;   
     }
   }
+  $password = 'Simple123';
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  
 
 ?> 
 <!DOCTYPE html>
@@ -47,8 +50,8 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/mystyle.css">
-
+    <link rel="stylesheet" href="../css/mystyle.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
     <header>
@@ -61,12 +64,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    <a class="nav-link grow"  href="about.html">About</a>
-                    <a class="nav-link grow" href="contact.php">Contact</a>
-                    <a class="nav-link grow" href="services.php">Services</a>
-                    <a class="nav-link grow" href="FAQ.html">FAQ</a>
-                    <a class="disabled nav-link grow" href="resources.html">Resources</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    <a class="nav-link grow"  href="../about.html">About</a>
+                    <a class="nav-link grow" href="../contact.php">Contact</a>
+                    <a class="nav-link grow" href="../services.php">Services</a>
+                    <a class="nav-link grow" href="../FAQ.html">FAQ</a>
+                    <a class="disabled nav-link grow" href="../resources.html">Resources</a>
                 </div>
                 </div>
             </div>
@@ -74,12 +77,13 @@
     </header>
 
     <main>
-        <div class="container">
+        <br><br><br>
+        
+        <div class="flex-container">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 form-container">
                     <h1 class="text-center">Admin Login</h1>
                     <br />
-      
                     <form method="POST" action="login.php">
                         Username: <input type="username" name="username"><br>
                         Password: <input type="password" name="password"><br>

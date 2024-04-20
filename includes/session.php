@@ -59,13 +59,17 @@
 	    // Get username and password from db and check if matches what user typed in login form												  
 	    $sql = "SELECT username, password
 	            FROM Admin
-	            WHERE username = :username AND password = :password";
+	            WHERE username = :username";
 
 	    // Execute SQL query w/args for username and password
-	    $user = pdo($pdo, $sql, ['username' => $username, 'password' => $password])->fetch();
+	    $user = pdo($pdo, $sql, ['username' => $username])->fetch();
 
-	    // Return username and password from db
-	    return $user;
+	    if ($user && password_verify($password, $user['password'])) {
+            return $user; // Return user data if the password is correct
+        } else {
+
+            return false; // Return false if the password is incorrect or user not found
+        }
   	}
 
 ?>
