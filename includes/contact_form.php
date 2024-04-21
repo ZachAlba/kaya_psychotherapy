@@ -26,8 +26,8 @@
     <textarea id="message" name="message" rows="4" cols="50" required><?php echo htmlspecialchars($formData['message']); ?></textarea><br>
     <span class="error"><?php echo $errorMessages['message']; ?></span><br>
     
-    <input type="checkbox" id="waiting_list" name="waiting_list">
-    <label for="waiting_list">Add to waiting list</label><br>
+    <input type="checkbox" id="waitlist" name="waitlist">
+    <label for="waitlist">Add to waiting list</label><br>
     
     <input type="submit" value="Submit">
 </form>

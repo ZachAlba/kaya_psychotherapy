@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $formData['age'] = $_POST['age'];
     $formData['insurance'] = isset($_POST['insurance']) ? $_POST['insurance'] : '';
     $formData['message'] = $_POST['message'];
-    $formData['waitlist'] = isset($_POST['waitlist']);
-
+    $formData['waitlist'] = isset($_POST['waitlist']) ? 'Yes' : 'No';
     // Validate form data
     if (!validateText($formData['name'], 3, 100)) {
         $errorMessages['name'] = "Name is required and must be between 3 and 100 characters long.";
@@ -137,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php echo $feedbackMessage; ?>
     </div>
     <br>
+    <!-- this completely broke now I guess womp -->
     <div class="container">
         <h2 class="center headings">Location</h2>
         <div class="row">
