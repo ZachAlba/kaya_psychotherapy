@@ -1,45 +1,28 @@
 /////////////////////////////////////////
 ////~~ location.js API integration  ~~///
-////~~     Google and Modernizr     ~~///
+////~~    Leaflet and Modernizr     ~~///
 /////////////////////////////////////////
 
-function init() {
-    var mapOptions = {
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        zoom: 12
-    };
-    var venueMap = new google.maps.Map(document.getElementById('map'), mapOptions);
+const storeLat = 42.600060;
+const storeLong = -70.959070;
 
-    // Store location
-    var storeLocation = new google.maps.LatLng(42.600060, -70.959070);
-    var storeMarker = new google.maps.Marker({
-        position: storeLocation,
-        map: venueMap,
-        title: 'Store Location'
+if (Modernizr.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        var map = L.map('map').setView([latitude, longitude], 13);
+        var userMarker = L.marker([latitude, longitude]).addTo(map);
+        userMarker.bindPopup("You are here!").openPopup();
+        
     });
-
-    // Geolocation
-    if (Modernizr.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            var userMarker = new google.maps.Marker({
-                position: userLocation,
-                map: venueMap,
-                title: 'Your Location'
-            });
-
-            // Center map on user's location
-            venueMap.setCenter(userLocation);
-        });
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
+} else {
+    var map = L.map('map').setView([storeLat, storeLong], 13);
 }
 
-function loadScript() {
-    var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?callback=init';
-    document.body.appendChild(script);
-}
-
-window.onload = loadScript;
+var marker = L.marker([storeLat, storeLong]).addTo(map);
+marker.bindPopup("<b>Kaya Office Location.").openPopup();
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
