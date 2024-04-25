@@ -89,13 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/mystyle.css">
     <link rel="stylesheet" href="css/form.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
 </head>
 <body>
-    
+
     <header>
         <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -146,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="center headings">Location</h2>
         <div class="row">
             <div class="col-md-2"></div>
-            <div id="map" class="col-md-6"></div>
+            <a class ="btn grow" href="map.html">Click here to see where our offices are located!</a>
             <div class="col-md-2"></div>
 
         </div>
@@ -175,10 +171,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </footer>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
     <!-- Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- jQuery -->
@@ -188,8 +180,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')
     </script>
     <!-- local JS-->
-    <script src="js/modernizr.js"></script>
-    <script src="js/location.js"></script>
     <script src="js/form.js"></script>
 </body>
 </html>
