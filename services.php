@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/mystyle.css">
-
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <header>
@@ -50,32 +50,64 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <a href="#" style="text-decoration: none;" id="free">
+                    <a href="services.php?type=free" style="text-decoration: none;" id="free">
                         <div class="card" id="card1">
                             <img src="images/slideshow/balance.jpg" class="card-img-top" alt="stacked rocks, balance">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $service1->service_name ?></h5>
                                 <p class="card-text"><?= $service1->service_description ?><br>Sessions Available: <?= $service1->getServiceAvailability()?></p>
-                                <button id="bookFreeServiceBtn">Book Now</button>
+                                <p> Click to book a free consultation!</p>
+                               <!-- <button id="bookFreeServiceBtn">Book Now</button>-->
                             </div>
                         </div>
                     </a>
                     <br>
-                    <a href="#" style="text-decoration: none;" id="loadData">
+                    <a href="services.php?type=session" style="text-decoration: none;" id="loadData">
                         <div class="card" id="card2">
                             <img src="images/slideshow/growing.jpg" class="card-img-top" alt="green sprout on a person's hand, growing">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $service2->service_name ?></h5>
                                 <p class="card-text"><?= $service2->service_description ?><br>Sessions Available: <?= $service2->getServiceAvailability()?></p>
-                                <button id="bookServiceBtn">Book Now</button>
+                                <p>Click to schedule your session!</p>
+                                <!--<button id="bookServiceBtn">Book Now</button>-->
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class = "col align-self-center content" id="result-container"style="display: none">
-                </div>
+                <?php if(isset($_GET['type'])): ?>
+                    <?php if($_GET['type'] == 'free'): ?>
+                        <div class="col align-self-center form-container" id="result-container">
+                            <h3>Free Consultation</h3>
+                            <p>Fill out the form below to book a free consultation with Kaya Psychotherapy.</p>
+                            <form id="freeForm"  method="post">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                                </div>
+                                <input type="submit" value="Submit">
+                        </div>
+                    <?php elseif($_GET['type'] == 'session'): ?>
+                        <div class="col align-self-center content" id="result-container">
+                            <h3>Session Booking</h3>
+                            <p> You can only schedule a booking after you have completed a free consultation and received an account!</p>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
-            <br><br><br>
+        </div>
+        <br><br><br>
     </main>
             
 
@@ -110,6 +142,6 @@
         </script>
         <!-- Custom jQuery -->
         <script src="js/services.js"></script>
-        <script src="js/jq_ajax.js"></script>   
+        <!--<script src="js/jq_ajax.js"></script>-->
     </body>
 </html>

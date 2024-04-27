@@ -16,12 +16,12 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            margin: 0; /* Remove default margin */
+            justify-content: center; 
+            align-items: center; 
+            margin: 0; 
         }
         #map-container {
-            position: relative; /* Set position to relative */
+            position: relative; 
             width: 80%; 
             height: 80vh; 
         }
@@ -30,7 +30,7 @@
             height: 100%;
         }
         .back-button {
-            margin-top: 10px; /* Adjust top margin as needed */
+            margin-top: 10px; 
             background-color: white;
             border: none;
             padding: 10px 20px;
@@ -48,7 +48,7 @@
     <div id="map-container">
         <div id="map"></div>
     </div>
-    <button class="back-button" onclick="goBack()">Go Back</button> <!-- Move button outside the map container -->
+    <button class="back-button" onclick="goBack()">Go Back</button> 
 
     <script>
         const storeLat = 42.600060;
@@ -69,7 +69,7 @@
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
                 
-                map.setView([latitude, longitude]); // Set view after obtaining geolocation
+                map.setView([latitude, longitude]); 
                 var userMarker = L.marker([latitude, longitude]).addTo(map);
                 userMarker.bindPopup("You are here!").openPopup();
                 
@@ -77,7 +77,7 @@
         }
 
         function goBack() {
-            window.history.back(); // Go back to the previous page
+            window.history.back(); 
         }
     </script>
 </body>

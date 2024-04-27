@@ -5,10 +5,9 @@
 ///////////////////////////////////////
 
 
-//why is this not updating
 
 $('#loadData').on('click', function (event) {
-    event.preventDefault();
+    
 
     // fade out result container
     $('#result-container').fadeOut(function () {
@@ -26,7 +25,7 @@ $('body').on('click', function () {
 });
 
 $('#free').on('click', function (event) {
-    event.preventDefault();
+    
 
     // fade out result container
     $('#result-container').fadeOut(function () {
